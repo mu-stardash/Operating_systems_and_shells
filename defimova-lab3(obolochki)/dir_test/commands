@@ -1,0 +1,29 @@
+/**
+ *Copyright (c) 2020, Dasha Efimova <dashulya0301178@gmail.com>
+ */
+
+Шаг 2
+1.ls -l
+2.chmod 733 dir_test
+3.mkdir -m 740 subdir_test
+5.chmod u+x text1 text2 text3
+
+Шаг 3
+1. ln -s ~/operob/lab3/dir_test/subdir_test/text1 slink1
+ln -s ~/operob/lab3/dir_test/subdir_test/text2 slink2
+ln -s ~/operob/lab3/dir_test/subdir_test/text3 slink3
+
+2.ln ~/operob/lab3/dir_test/subdir_test/text1 flink1
+ln ~/operob/lab3/dir_test/subdir_test/text1 flink2
+ls -il - вывести номер индексного дискриптора
+
+3.ln -s ~/operob/lab3/dir_test ~/'Рабочий стол'/dir_test
+
+Шаг 4
+1.find ~ -name '*~' -exec rm {} \;
+еще можно вот так: rm $(find ~ -name '*~') или find ~ -name '*~' -delete
+
+2.find ~ -maxdepth 1 -type d -exec du -sh {} \;
+
+3.find /home/ -maxdepth 1 -perm /o=w -exec basename {} \;
+Красивее, если еще и сделать сортировку: find /home/ -maxdepth 1 -perm /o=w -exec basename {} \; | sort

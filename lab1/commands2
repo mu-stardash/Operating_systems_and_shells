@@ -1,0 +1,2 @@
+     1	who -q
+     2	date +"%d %B %Y"
